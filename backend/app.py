@@ -1,17 +1,22 @@
+from dotenv import load_dotenv
+
+# Load .env BEFORE importing anything that uses Supabase
+load_dotenv()
+
 from fastapi import FastAPI
-
 from api.incident_routes import router as incident_router
-from api.agent_routes import router as agent_router
-from api.memory_routes import router as memory_router
 
-app = FastAPI(title="Incident Response Agent")
+app = FastAPI(
+    title="Incident Response Agent"
+)
 
+app.include_router(
+    incident_router,
+    prefix="/api"
+)
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-
-app.include_router(incident_router)
-app.include_router(agent_router)
-app.include_router(memory_router)
+@app.get("/")
+def root():
+    return {
+        "message": "Incident Response Agent API"
+    }

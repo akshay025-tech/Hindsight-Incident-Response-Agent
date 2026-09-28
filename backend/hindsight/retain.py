@@ -6,11 +6,11 @@ MEMORY_FILE = Path("data/memory.json")
 
 def retain_memory(record: dict):
     with open(MEMORY_FILE, "r", encoding="utf-8") as f:
-        data = json.load(f)
+        memory = json.load(f)
 
-    data.append(record)
+    memory.append(record)
 
     with open(MEMORY_FILE, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
+        json.dump(memory, f, indent=2)
 
     return record

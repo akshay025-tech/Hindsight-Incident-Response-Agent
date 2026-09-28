@@ -1,9 +1,22 @@
-import json
-from pathlib import Path
-
-MEMORY_FILE = Path("data/memory.json")
+from hindsight.recall import recall_memory
 
 
-def recall_memory():
-    with open(MEMORY_FILE, "r", encoding="utf-8") as f:
-        return json.load(f)
+def reflect_memory():
+    memory = recall_memory()
+
+    if not memory:
+        return {
+            "total_incidents": 0,
+            "lessons_learned": []
+        }
+
+    lessons = []
+
+    for item in memory:
+        if "lesson" in item:
+            lessons.append(item["lesson"])
+
+    return {
+        "total_incidents": len(memory),
+        "lessons_learned": lessons
+    }

@@ -6,12 +6,18 @@ load_dotenv()
 
 class HindsightClient:
     def __init__(self):
-        self.api_key = os.getenv("HINDSIGHT_API_KEY")
-        self.base_url = os.getenv("HINDSIGHT_BASE_URL")
-        self.mock_mode = os.getenv("MOCK_MODE", "true").lower() == "true"
+        self.mock_mode = (
+            os.getenv("MOCK_MODE", "true").lower() == "true"
+        )
 
-    def status(self):
+    def generate_insight(self, incident):
+        if self.mock_mode:
+            return {
+                "source": "mock",
+                "insight": f"Similar incidents found for {incident.get('alert_type')}"
+            }
+
         return {
-            "mock_mode": self.mock_mode,
-            "base_url": self.base_url,
+            "source": "external",
+            "insight": "External provider not configured"
         }
