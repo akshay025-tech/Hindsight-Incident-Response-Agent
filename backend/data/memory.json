@@ -1,0 +1,10 @@
+[
+    {
+        "incident_id": "INC-001",
+        "lesson": "Restart resolved issue"
+    },
+    {
+        "incident_id": "INC-002",
+        "lesson": "Scaled database pool"
+    }
+]
