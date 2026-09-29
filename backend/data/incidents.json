@@ -1,0 +1,10 @@
+[
+    {
+        "id": "INC-001",
+        "title": "High CPU Usage"
+    },
+    {
+        "id": "INC-002",
+        "title": "Database Timeout"
+    }
+]

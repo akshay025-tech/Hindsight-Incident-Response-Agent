@@ -1,0 +1,10 @@
+[
+    {
+        "issue": "high_cpu",
+        "action": "restart service"
+    },
+    {
+        "issue": "db_timeout",
+        "action": "increase pool size"
+    }
+]
