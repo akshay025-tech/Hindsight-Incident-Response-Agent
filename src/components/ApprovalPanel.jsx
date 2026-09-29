@@ -17,6 +17,7 @@ function ApprovalPanel({
   const [approved, setApproved] = useState(false);
   const [executing, setExecuting] = useState(false);
   const [completed, setCompleted] = useState(false);
+  const [error, setError] = useState("");
 
   if (!action) {
     return (
@@ -40,7 +41,7 @@ function ApprovalPanel({
       await approveAction(action.id);
       setApproved(true);
     } catch (error) {
-      console.error(error);
+      setError(error.response?.data?.detail || "Approval failed.");
     }
   };
 
@@ -57,7 +58,7 @@ function ApprovalPanel({
       }
 
     } catch (error) {
-      console.error(error);
+      setError(error.response?.data?.detail || "Action simulation failed.");
     } finally {
       setExecuting(false);
     }
@@ -71,12 +72,14 @@ function ApprovalPanel({
         <h2>Human Approval</h2>
       </div>
 
+      {error && <div className="request-error" role="alert">{error}</div>}
+
       {!approved && !completed && (
 
         <>
           <p>
-            The AI agent has proposed an action.
-            Production execution requires human approval.
+            Review and approve the recommendation. The next step only simulates
+            execution and updates this incident; it does not change production.
           </p>
 
           <button
@@ -107,8 +110,8 @@ function ApprovalPanel({
             <Play size={18} />
 
             {executing
-              ? "Executing..."
-              : "Execute Action"}
+              ? "Simulating..."
+              : "Simulate Action"}
           </button>
 
         </>

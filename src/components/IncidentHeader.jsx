@@ -31,7 +31,7 @@ function IncidentHeader({ incident }) {
 
         <div>
           <Server size={16} />
-          {incident.service}
+          {incident.service || incident.source || "Unspecified source"}
         </div>
 
         <div>
