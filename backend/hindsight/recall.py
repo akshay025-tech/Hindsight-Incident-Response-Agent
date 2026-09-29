@@ -1,22 +1,20 @@
-from hindsight.recall import recall_memory
+import json
+from pathlib import Path
+
+MEMORY_FILE = Path(__file__).resolve().parent.parent / 'data' / 'memory.json'
 
 
-def reflect_memory():
-    memory = recall_memory()
+def recall_memory(query: str | None = None):
+    with MEMORY_FILE.open('r', encoding='utf-8') as f:
+        memory = json.load(f)
 
-    if not memory:
-        return {
-            "total_incidents": 0,
-            "lessons_learned": []
-        }
+    if not query:
+        return memory
 
-    lessons = []
-
-    for item in memory:
-        if "lesson" in item:
-            lessons.append(item["lesson"])
-
-    return {
-        "total_incidents": len(memory),
-        "lessons_learned": lessons
-    }
+    needle = str(query).lower()
+    return [
+        item for item in memory
+        if needle in str(item.get('incident_id', '')).lower()
+        or needle in str(item.get('lesson', '')).lower()
+        or needle in str(item.get('alert_type', '')).lower()
+    ]

@@ -1,10 +1,115 @@
 [
-    {
-        "incident_id": "INC-001",
-        "lesson": "Restart resolved issue"
-    },
-    {
-        "incident_id": "INC-002",
-        "lesson": "Scaled database pool"
-    }
+  {
+    "incident_id": "INC-001",
+    "lesson": "Restart resolved issue"
+  },
+  {
+    "incident_id": "INC-002",
+    "lesson": "Scaled database pool"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-002",
+    "alert_type": "Database Timeout",
+    "lesson": "Investigated Database Timeout"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-002",
+    "alert_type": "Database Timeout",
+    "lesson": "Investigated Database Timeout"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-001",
+    "alert_type": "High CPU Usage",
+    "lesson": "Investigated High CPU Usage"
+  },
+  {
+    "incident_id": "INC-312AA2BF",
+    "alert_type": "high_cpu",
+    "lesson": "Investigated high_cpu"
+  },
+  {
+    "incident_id": "INC-D248E3F3",
+    "alert_type": "database_timeout",
+    "lesson": "Investigated database_timeout"
+  },
+  {
+    "incident_id": "INC-D248E3F3",
+    "alert_type": "database_timeout",
+    "lesson": "Investigated database_timeout"
+  }
 ]

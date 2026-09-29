@@ -1,10 +1,23 @@
 [
     {
-        "issue": "high_cpu",
-        "action": "restart service"
+        "root_cause": "high_cpu",
+        "recommended_actions": [
+            "restart service",
+            "scale workers"
+        ]
     },
     {
-        "issue": "db_timeout",
-        "action": "increase pool size"
+        "root_cause": "database_timeout",
+        "recommended_actions": [
+            "increase pool size",
+            "check slow queries"
+        ]
+    },
+    {
+        "root_cause": "http_5xx_spike",
+        "recommended_actions": [
+            "rollback deployment",
+            "check upstream dependency"
+        ]
     }
 ]

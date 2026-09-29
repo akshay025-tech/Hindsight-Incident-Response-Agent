@@ -3,24 +3,19 @@ from fastapi import APIRouter
 from hindsight.recall import recall_memory
 from hindsight.reflect import reflect_memory
 
-router = APIRouter(
-    prefix="/memory",
-    tags=["Memory"]
-)
+router = APIRouter(prefix='/memory', tags=['Memory'])
 
 
-@router.get("/ping")
+@router.get('/ping')
 def ping():
-    return {
-        "message": "memory router working"
-    }
+    return {'message': 'memory router working'}
 
 
-@router.get("/recall")
-def recall(query: str = ""):
+@router.get('/recall')
+def recall(query: str = ''):
     return recall_memory(query)
 
 
-@router.post("/reflect")
+@router.post('/reflect')
 def reflect():
     return reflect_memory()

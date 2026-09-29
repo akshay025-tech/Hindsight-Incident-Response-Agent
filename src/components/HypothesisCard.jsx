@@ -1,71 +1,28 @@
-import {
-  Lightbulb,
-  CheckCircle
-} from "lucide-react";
+import { Brain } from 'lucide-react';
 
-import ConfidenceMeter from "./ConfidenceMeter";
+function HypothesisCard({ hypothesis }) {
+    const confidence = Number(hypothesis?.confidence);
+    const percent = Number.isFinite(confidence)
+        ? Math.round(Math.max(0, Math.min(100, confidence <= 1 ? confidence * 100 : confidence)))
+        : null;
 
-function HypothesisCard({ hypotheses }) {
-  return (
-    <section className="panel">
-
-      <div className="section-title">
-        <Lightbulb size={20} />
-        <h2>Agent Hypotheses</h2>
-      </div>
-
-      {hypotheses.length === 0 ? (
-
-        <div className="empty-state">
-          Run AI analysis to generate hypotheses.
-        </div>
-
-      ) : (
-
-        <div className="hypothesis-list">
-
-          {hypotheses.map((hypothesis, index) => (
-
-            <div
-              className="hypothesis-card"
-              key={index}
-            >
-
-              <div className="hypothesis-top">
-
-                <div>
-                  <strong>
-                    {hypothesis.title}
-                  </strong>
-
-                  <p>
-                    {hypothesis.description}
-                  </p>
-                </div>
-
-                {hypothesis.validated && (
-                  <CheckCircle
-                    size={20}
-                    className="success-icon"
-                  />
-                )}
-
-              </div>
-
-              <ConfidenceMeter
-                value={hypothesis.confidence}
-              />
-
+    return (
+        <article className="hypothesis-item">
+            <div className="hypothesis-heading">
+                <Brain size={16} />
+                <strong>{hypothesis?.title || 'Likely cause'}</strong>
             </div>
-
-          ))}
-
-        </div>
-
-      )}
-
-    </section>
-  );
+            <p>{hypothesis?.description || 'No supporting details available.'}</p>
+            {percent !== null && (
+                <div className="confidence-row">
+                    <div className="confidence-track" aria-label={`${percent}% confidence`}>
+                        <span style={{ width: `${percent}%` }} />
+                    </div>
+                    <span>{percent}%</span>
+                </div>
+            )}
+        </article>
+    );
 }
 
 export default HypothesisCard;

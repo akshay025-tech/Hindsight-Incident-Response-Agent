@@ -1,0 +1,12 @@
+[
+  {
+    "incident_id": "INC-312AA2BF",
+    "incident_title": "High Cpu on api-gateway",
+    "summary": "High Cpu on api-gateway affected api-gateway. Alert simulator reported 92 for api-gateway.",
+    "root_cause": "Needs investigation",
+    "impact": "Alert simulator reported 92 for api-gateway.",
+    "resolution": "Add the mitigation and validation steps taken during response.",
+    "follow_up": "Assign an owner, define a due date, and verify the preventative action.",
+    "generated_at": "2026-09-29T10:42:45.086976+00:00"
+  }
+]
